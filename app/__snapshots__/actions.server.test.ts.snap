@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`getAnagrams returns anagrams associated with the given word from the database 1`] = `
+[
+  {
+    "definition": "An arch, or ceiling, of boards, placed over the men's heads in a mine.",
+    "sortedWord": "aelst",
+    "word": "astel",
+  },
+  {
+    "definition": "Smallest, either in size or degree; shortest; lowest; most unimportant; as, the least insect; the least mercy; the least space. Note: Least is often used with the, as if a noun. I am the least of the apostles. 1 Cor. xv. 9. At least, or At the least, at the least estimate, consideration, chance, etc.; hence, at any rate; at all events; even. See However. He who tempts, though in vain, at least asperses The tempted with dishonor. Milton. Upon the mast they saw a young man, at least if he were a man, who sat as on horseback. Sir P. Sidney. -- In least, or In the least, in the least degree, manner, etc. "He that is unjust in the least is unjust also in much." Luke xvi. 10. -- Least squares (Math.), a method of deducing from a number of carefully made yet slightly discordant observations of a phenomenon the most probable values of the unknown quantities. Note: It takes as its fundamental principle that the most probable values are those which make the sum of the squares of the residual errors of the observation a minimum.
+
+In the smallest or lowest degree; in a degree below all others; as, to reward those who least deserve it.
+
+See Lest, conj. [Obs.] Spenser.",
+    "sortedWord": "aelst",
+    "word": "least",
+  },
+  {
+    "definition": "To settle. [Obs.] Chaucer.",
+    "sortedWord": "aelst",
+    "word": "satle",
+  },
+  {
+    "definition": "of Last, to endure. Chaucer.",
+    "sortedWord": "aelst",
+    "word": "laste",
+  },
+  {
+    "definition": "A handle; a stale, or stele. [Archaic or Prov. Eng.] And in his hand a huge poleax did bear. Whose steale was iron-studded but not long. Spenser.
+
+1. To take and carry away, feloniously; to take without right or leave, and with intent to keep wrongfully; as, to steal the personal goods of another. Maugre thy heed, thou must for indigence Or steal, or borrow, thy dispense. Chaucer. The man who stole a goose and gave away the giblets in G. Eliot. 2. To withdraw or convey clandestinely (reflexive); hence, to creep furtively, or to insinuate. They could insinuate and steal themselves under the same by their humble carriage and submission. Spenser. He will steal himself into a man's favor. Shak. 3. To gain by insinuating arts or covert means. So Absalom stole the hearts of the men of Israel. 2 Sam. xv. 6. 4. To get into one's power gradually and by imperceptible degrees; to take possession of by a gradual and imperceptible appropriation; -- with away. Variety of objects has a tendency to steal away the mind from its steady pursuit of any subject. I. Watts. 5. To accomplish in a concealed or unobserved manner; to try to carry out secretly; as, to steal a look. Always, when thou changest thine opinion or course, profess it plainly, . . . and do not think to steal it. Bacon. To steal a march, to march in a covert way; to gain an advantage unobserved; -- formerly followed by of, but now by on or upon, and sometimes by over; as, to steal a march upon one's political rivals. She yesterday wanted to steal a march of poor Liddy. Smollett. Fifty thousand men can not easily steal a march over the sea. Walpole. Syn. -- To filch; pilfer; purloin; thieve.
+
+1. To practice, or be guilty of, theft; to commit larceny or theft. Thou shalt not steal. Ex. xx. 15. 2. To withdraw, or pass privily; to slip in, along, or away, unperceived; to go or come furtively. Chaucer. Fixed of mind to avoid further entreaty, and to fly all company, one night she stole away. Sir P. Sidney. From whom you now must steal, and take no leave. Shak. A soft and solemn breathing sound Rose like a steam of rich, distilled perfumes, And stole upon the air. Milton.",
+    "sortedWord": "aelst",
+    "word": "steal",
+  },
+  {
+    "definition": "Persons added to a jury, commonly from those in or about the courthouse, to make up any deficiency in the number of jurors regularly summoned, being like, or such as, the latter. Blount. Blackstone. (b) syntactically sing.  The writ by which such persons are summoned. Tales book, a book containing the names of such as are admitted of the tales. Blount. Craig. -- Tales de circumstantibus Etym: [L.], such, or the like, from those standing about.",
+    "sortedWord": "aelst",
+    "word": "tales",
+  },
+  {
+    "definition": "A genus of large percoid fishes, of which one species (Lates Niloticus) inhabits the Nile, and another (L. calcarifer",
+    "sortedWord": "aelst",
+    "word": "lates",
+  },
+  {
+    "definition": "The stock or handle of anything; as, the stale of a rake. [Written also steal, stele, etc.] But seeling the arrow's stale without, and that the head did go No further than it might be seen. Chapman.
+
+1. Vapid or tasteless from age; having lost its life, spirit, and flavor, from being long kept; as, stale beer. 2. Not new; not freshly made; as, stele bread. 3. Having lost the life or graces of youth; worn out; decayed. "A stale virgin." Spectator. 4. Worn out by use or familiarity; having lost its novelty and power of pleasing; trite; common. Swift. Wit itself, if stale is less pleasing. Grew. How weary, stale flat, and unprofitable Seem to me all the uses of this world! Shak. Stale affidavit (Law), an affidavit held above a year. Craig. -- Stale demand (Law), a claim or demand which has not been pressed or demanded for a long time.
+
+To make vapid or tasteless; to destroy the life, beauty, or use of; to wear out. Age can not wither her, nor custom stale Her infinite variety. Shak.
+
+To make water; to discharge urine; -- said especially of horses and cattle. Hudibras.
+
+1. That which is stale or worn out by long keeping, or by use. [Obs.] 2. A prostitute. [Obs.] Shak. 3. Urine, esp. that of beasts. "Stale of horses." Shak.
+
+1. Something set, or offered to view, as an allurement to draw others to any place or purpose; a decoy; a stool pigeon. [Obs.] Still, as he went, he crafty stales did lay. Spenser. 2. A stalking-horse. [Obs.] B. Jonson. 3. (Chess)  A stalemate. [Obs.] Bacon. 4. A laughingstock; a dupe. [Obs.] Shak.",
+    "sortedWord": "aelst",
+    "word": "stale",
+  },
+  {
+    "definition": "A small column or pillar, used as a monument, milestone, etc.",
+    "sortedWord": "aelst",
+    "word": "stela",
+  },
+]
+`;

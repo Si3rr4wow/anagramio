@@ -6,10 +6,10 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 
 import { fontSans } from "@/config/fonts";
-import { LoginButton } from "@/components/sign-in";
+import { LoginButton } from "./sign-in";
 
 export const metadata: Metadata = {
-  title: "Acronymio",
+  title: "Anagramio",
   icons: {
     icon: "/favicon.ico",
   },

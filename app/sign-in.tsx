@@ -13,7 +13,9 @@ export const LoginButton = () => {
           <Button onPress={() => signOut()}>Sign out</Button>
         </>
       ) : (
-        <Button onPress={() => signIn("google")}>Sign in with Google</Button>
+        <Button id="sign-in" onPress={() => signIn("google")}>
+          Sign in with Google
+        </Button>
       )}
     </div>
   );

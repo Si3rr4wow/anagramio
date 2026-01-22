@@ -1,5 +1,6 @@
 "use server";
 
+import { buildSortedWord } from "@/common";
 import { getDbClient } from "@/db/client";
 
 const isFile = (maybeFile: unknown): maybeFile is File => {
@@ -52,7 +53,8 @@ export const uploadDictionary = async (formData: FormData) => {
 
   console.log("Writing words to database");
   await dbClient.getCollections().words.bulkWrite(bulkOperations);
-
+  console.log("Creating index on word");
+  await dbClient.getCollections().words.createIndex({ word: 1 });
   console.log("Creating index on sortedWord");
   await dbClient.getCollections().words.createIndex({ sortedWord: 1 });
 };

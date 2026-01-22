@@ -1,26 +1,29 @@
 "use client";
 
-import { title } from "@/components/primitives";
+import { title } from "./primitives";
 import { useIsSignedIn } from "@/hooks/use-is-signed-in";
 import { Input } from "@heroui/input";
 import { Listbox, ListboxItem } from "@heroui/listbox";
-import { getAcronyms } from "./actions";
+import { getAnagrams } from "./actions";
 import { ChangeEvent, useState } from "react";
 import { Document } from "mongodb";
+import { debounce } from "@/common";
 
 export default function Home() {
   const isSignedIn = useIsSignedIn();
-  const [acronyms, setAcronyms] = useState<Array<Document>>([]);
-  const [selectedAcronym, setSelectedAcronym] = useState<Document | null>(null);
+  const [anagrams, setAnagrams] = useState<Array<Document>>([]);
+  const [selectedAnagram, setSelectedAnagram] = useState<Document | null>(null);
 
-  const onWordChange = async (event: ChangeEvent<HTMLInputElement>) => {
-    setSelectedAcronym(null);
-    const nextAcronyms = await getAcronyms(event.target.value);
-    setAcronyms(nextAcronyms);
-  };
+  const onWordChange = debounce<ChangeEvent<HTMLInputElement>>(
+    async (event: ChangeEvent<HTMLInputElement>) => {
+      setSelectedAnagram(null);
+      const nextAnagrams = await getAnagrams(event.target.value);
+      setAnagrams(nextAnagrams);
+    },
+  );
 
-  const onSelectionChange = (acronym: Document) => () => {
-    setSelectedAcronym(acronym);
+  const onSelectionChange = (anagram: Document) => () => {
+    setSelectedAnagram(anagram);
   };
 
   return (
@@ -28,7 +31,7 @@ export default function Home() {
       <section className="flex justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-xl text-center justify-center">
           <h1>
-            <span className={title()}>Acronym</span>
+            <span className={title()}>Anagram</span>
             <span className={title({ color: "violet" })}>.io</span>
           </h1>
 
@@ -37,17 +40,17 @@ export default function Home() {
           {isSignedIn ? (
             <Input label="Search word" name="word" onChange={onWordChange} />
           ) : (
-            <p>Sign in to search for acronyms</p>
+            <p>Sign in to search for anagrams</p>
           )}
 
-          <Listbox className="py-4" emptyContent="No acronyms">
-            {acronyms.map((acronym) => {
+          <Listbox className="py-4" emptyContent="No anagrams">
+            {anagrams.map((anagram) => {
               return (
                 <ListboxItem
-                  key={acronym.word}
-                  onPress={onSelectionChange(acronym)}
+                  key={anagram.word}
+                  onPress={onSelectionChange(anagram)}
                 >
-                  {acronym.word}
+                  {anagram.word}
                 </ListboxItem>
               );
             })}
@@ -55,7 +58,7 @@ export default function Home() {
         </div>
       </section>
       <section className="gap-4 p-8 md:py-10 w-100 h-100">
-        <p>{selectedAcronym && selectedAcronym.definition}</p>
+        <p id="definition">{selectedAnagram && selectedAnagram.definition}</p>
       </section>
     </div>
   );
