@@ -1,53 +1,100 @@
-# Next.js & HeroUI Template
+# Anagram.io
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+An app for finding anagrams
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+## Getting started
 
-## Technologies Used
+### Prerequisites 📋
+- Node
+- A Mongo Database
+- A GCP Account
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+You can boot up a MongoDB locally or create one on Atlas if you like.
+You'll need to head into GCP and create an OAuth2.0 client ID and secret
 
-## How to Use
+### Setup 👷‍♀️
 
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
+First things first get everything installed with the ol'
 
 ```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
+npm ci
 ```
 
-### Install dependencies
+then you'll need to create a `.env` file in the root of the project. You'll need to add your Google client ID and secret, your MongoDB connection string and some other bits. The file should look like this
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
-```bash
-npm install
+```
+GOOGLE_CLIENT_ID="<your_client_id>"
+GOOGLE_CLIENT_SECRET="<your_secret>"
+NEXTAUTH_SECRET="<some_long_string_you_generate>"
+MONGODB_CONNECTION_STRING="<your_connection_string>"
+NEXTAUTH_URL=http://localhost:3000
 ```
 
-### Run the development server
+### Boot up 🚀
 
-```bash
+You're ready to start the app up in either dev mode by running
+
+```
 npm run dev
 ```
 
-### Setup pnpm (optional)
+or build the app and run the build with
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@heroui/*
+```
+npm run build
+npm start
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+## Using the thing 🤾‍♀️
 
-## License
+When the app first boots you won't be able to find any anagrams for any words you type in. This is because there won't be any words in your database yet. Don't fret. Navigate to `/upload-dictionary` and submit some in JSON format. Your dictionary should be an object where each key is a word each value is a definition. For example
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+```JSON
+{
+  "iceman": "A dude made of ice",
+  "cinema": "A place where you watch movies",
+  "3D": "Abriv. Three dimensional",
+  "3-D": "See 3D"
+}
+```
+
+You file must be less than 30mb. 
+
+I tested against this file which contains approximately 107,000 words https://github.com/matthewreagan/WebstersEnglishDictionary/blob/master/dictionary.json. This is much faster than writing your own dictionary by hand so I recommend seeding with this at least.
+
+## Testing 👩‍🔬
+
+There are two suites of tests, one written with Jest covering units and some integration, the other written with cypress to cover fuller flows.
+
+The jest tests can be run with
+
+```
+npm test
+```
+
+or in watch mode with
+
+```
+npm run test-watch
+```
+
+The cypress tests can be run headless with
+
+```
+npm run test:e2e
+```
+
+or in open mode with
+
+```
+npm run test:e2e:open
+```
+
+## The future 🔮
+
+- Try deploying this to vercel with a database hosted on Atlas
+- CI/CD with GH Actions
+- Add test coverage to the upload dictionary functionality
+- Separate upload dictionary into an admin area locked down with RBAC
+- Let users specify a language for both the uploaded dictionary and the searched word
+- Mark some words as NSFW
